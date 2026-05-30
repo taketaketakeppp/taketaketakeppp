@@ -76,24 +76,43 @@ modal.addEventListener("click", (e) => {
 });
 
 /* ==========================
-   スワイプ対応（モーダル）
+   スワイプ対応（安定版）
 ========================== */
 let startX = 0;
+let startY = 0;
+let isSwiping = false;
 
 modal.addEventListener("touchstart", (e) => {
     startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+    isSwiping = false;
+});
+
+modal.addEventListener("touchmove", (e) => {
+    const moveX = e.touches[0].clientX;
+    const moveY = e.touches[0].clientY;
+
+    const diffX = Math.abs(moveX - startX);
+    const diffY = Math.abs(moveY - startY);
+
+    // 横方向が明確に優勢な時だけスワイプ判定
+    if (diffX > 10 && diffX > diffY) {
+        isSwiping = true;
+        e.preventDefault(); // 背景スクロール防止
+    }
 });
 
 modal.addEventListener("touchend", (e) => {
+    if (!isSwiping) return;
+
     const endX = e.changedTouches[0].clientX;
     const diff = startX - endX;
 
-    // 50px以上動いたらスワイプ判定
     if (diff > 50) {
-        renderAll(currentIndex + 1); // ←左スワイプ
+        renderAll(currentIndex + 1); // 左スワイプ
     } 
     else if (diff < -50) {
-        renderAll(currentIndex - 1); // ←右スワイプ
+        renderAll(currentIndex - 1); // 右スワイプ
     }
 });
 
