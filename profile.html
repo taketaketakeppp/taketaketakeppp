@@ -41,28 +41,32 @@
             <div class="member active"
                  data-img="img/profile_karina.png"
                  data-name="KARINA"
-                 data-role="Leader / Main Dancer">
+                 data-role="Leader / Main Dancer"
+                 data-desc="aespaのリーダー。圧倒的ビジュアルとパフォーマンス">
                 KARINA
             </div>
 
             <div class="member"
                  data-img="img/profile_giselle.png"
                  data-name="GISELLE"
-                 data-role="Main Rapper">
+                 data-role="Main Rapper"
+                 data-desc="ラップと歌のバランスが強いメンバー">
                 GISELLE
             </div>
 
             <div class="member"
                  data-img="img/profile_winter.png"
                  data-name="WINTER"
-                 data-role="Lead Vocal">
+                 data-role="Lead Vocal"
+                 data-desc="透明感のあるボーカル">
                 WINTER
             </div>
 
             <div class="member"
                  data-img="img/profile_ningning.png"
                  data-name="NINGNING"
-                 data-role="Main Vocal">
+                 data-role="Main Vocal"
+                 data-desc="圧倒的な声量とパフォーマンス">
                 NINGNING
             </div>
 
@@ -79,13 +83,9 @@
 
         <div class="member-detail">
 
-            <h2 id="memberName">
-                KARINA
-            </h2>
+            <h2 id="memberName">KARINA</h2>
 
-            <p id="memberRole">
-                Leader / Main Dancer
-            </p>
+            <p id="memberRole">Leader / Main Dancer</p>
 
         </div>
 
@@ -93,6 +93,21 @@
 
 </section>
 
+<!-- モーダル -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span id="modalClose" class="modal-close">×</span>
+
+        <img id="modalImage" src="" alt="">
+        <h2 id="modalName"></h2>
+        <p id="modalRole"></p>
+        <p id="modalDesc"></p>
+
+        <!-- 矢印ナビ -->
+        <span id="modalPrev" class="modal-arrow left">◀</span>
+        <span id="modalNext" class="modal-arrow right">▶</span>
+    </div>
+</div>
 <footer>
 
     <div class="footer-inner">
