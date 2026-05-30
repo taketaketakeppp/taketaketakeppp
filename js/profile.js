@@ -81,6 +81,8 @@ modal.addEventListener("click", (e) => {
 let startX = 0;
 let startY = 0;
 
+const SWIPE_THRESHOLD = 80; // ここ重要（少し大きめ）
+
 modal.addEventListener("touchstart", (e) => {
     startX = e.touches[0].clientX;
     startY = e.touches[0].clientY;
@@ -91,10 +93,13 @@ modal.addEventListener("touchend", (e) => {
     const endY = e.changedTouches[0].clientY;
 
     const diffX = endX - startX;
-    const diffY = Math.abs(endY - startY);
+    const diffY = endY - startY;
 
-    // 横移動が縦より明確に大きい場合のみ反応
-    if (Math.abs(diffX) > 60 && Math.abs(diffX) > diffY) {
+    const absX = Math.abs(diffX);
+    const absY = Math.abs(diffY);
+
+    // 🔥ここが本体（重要ロジック）
+    if (absX > SWIPE_THRESHOLD && absX > absY * 1.5) {
 
         if (diffX < 0) {
             renderAll(currentIndex + 1); // 左スワイプ
@@ -103,7 +108,6 @@ modal.addEventListener("touchend", (e) => {
         }
     }
 });
-
 /* ==========================
    初期化
 ========================== */
