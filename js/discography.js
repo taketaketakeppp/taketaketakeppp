@@ -1,5 +1,5 @@
 const albums = [
-{title:"WHIPLASH",date:"2024.10.21",image:"img/whiplash.jpg"},
+{title:"WHIPLASH",date:"2024.10.21",image:"img/aespa_pink.png"},
 {title:"ARMAGEDDON",date:"2024.05.27",image:"img/armageddon.jpg"},
 {title:"SUPERNOVA",date:"2024.05.13",image:"img/supernova.jpg"},
 {title:"DRAMA",date:"2023.11.10",image:"img/drama.jpg"},

@@ -31,17 +31,21 @@ img{
 header{
   width:100%;
   padding:25px 80px;
+
   display:flex;
   justify-content:space-between;
   align-items:center;
+
   border-bottom:1px solid rgba(155,120,255,.25);
   position:sticky;
   top:0;
+
   background:rgba(10,10,10,.95);
   backdrop-filter:blur(20px);
   z-index:100;
 }
 
+/* LOGO */
 .logo{
   font-size:64px;
   font-weight:900;
@@ -55,6 +59,7 @@ header{
   color:#9b78ff;
 }
 
+/* NAV */
 nav{
   display:flex;
   align-items:center;
@@ -73,6 +78,7 @@ nav a:hover{
   color:#9b78ff;
 }
 
+/* FANCLUB */
 .login-btn{
   border:1px solid #9b78ff;
   padding:12px 24px;
@@ -87,21 +93,21 @@ nav a:hover{
 }
 
 /* ==================================
-   Common Button
+   HAMBURGER
 ================================== */
 
-.btn{
-  display:inline-block;
-  padding:18px 40px;
-  border:1px solid #9b78ff;
-  color:#9b78ff;
-  transition:.3s;
+.hamburger{
+  display:none;
+  flex-direction:column;
+  gap:6px;
+  cursor:pointer;
 }
 
-.btn:hover{
-  background:#9b78ff;
-  color:#fff;
-  box-shadow:0 0 25px rgba(155,120,255,.6);
+.hamburger span{
+  width:28px;
+  height:2px;
+  background:#fff;
+  transition:.3s;
 }
 
 /* ==================================
@@ -142,41 +148,11 @@ section{
 }
 
 /* ==================================
-   Page Hero Common
-================================== */
-
-.page-hero{
-  width:92%;
-  margin:40px auto 100px;
-}
-
-.page-hero-title{
-  font-size:120px;
-  font-weight:900;
-  line-height:1;
-  margin-bottom:20px;
-  color:#fff;
-  text-shadow:
-    0 0 20px rgba(155,120,255,.6),
-    0 0 40px rgba(90,180,255,.3);
-}
-
-.page-hero-subtitle{
-  font-size:20px;
-  color:#9b78ff;
-  letter-spacing:3px;
-}
-
-/* ==================================
-   Common Card
+   Card
 ================================== */
 
 .card{
-  background:linear-gradient(
-    135deg,
-    rgba(25,25,25,.95),
-    rgba(40,40,60,.95)
-  );
+  background:linear-gradient(135deg, rgba(25,25,25,.95), rgba(40,40,60,.95));
   border:1px solid rgba(155,120,255,.2);
   backdrop-filter:blur(10px);
   overflow:hidden;
@@ -211,7 +187,7 @@ section{
 }
 
 /* ==================================
-   Arrow Button
+   Arrow
 ================================== */
 
 .arrow{
@@ -230,63 +206,6 @@ section{
   background:#9b78ff;
   color:#fff;
   box-shadow:0 0 20px rgba(155,120,255,.6);
-}
-
-/* ==================================
-   Common List
-================================== */
-
-.list-item{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:25px 0;
-  border-bottom:1px solid rgba(155,120,255,.15);
-}
-
-/* ==================================
-   Form
-================================== */
-
-form{
-  margin-top:50px;
-}
-
-input,
-textarea{
-  width:100%;
-  padding:20px 0;
-  border:none;
-  border-bottom:1px solid rgba(155,120,255,.4);
-  background:transparent;
-  margin-bottom:30px;
-  outline:none;
-  font-size:16px;
-  color:#fff;
-}
-
-input::placeholder,
-textarea::placeholder{
-  color:#888;
-}
-
-textarea{
-  height:150px;
-  resize:none;
-}
-
-.send-btn{
-  padding:18px 40px;
-  border:1px solid #9b78ff;
-  background:transparent;
-  color:#9b78ff;
-  transition:.3s;
-}
-
-.send-btn:hover{
-  background:#9b78ff;
-  color:#fff;
-  box-shadow:0 0 25px rgba(155,120,255,.6);
 }
 
 /* ==================================
@@ -314,18 +233,111 @@ footer{
   gap:20px;
 }
 
-.socials a:hover{
-  color:#9b78ff;
-}
-
 .copyright{
   color:rgba(255,255,255,.5);
 }
+/* ===== SLIDE MENU ===== */
+
+.slide-menu{
+  position:fixed;
+  top:0;
+  right:-100%;
+  width:100%;
+  height:100vh;
+
+  background:rgba(5,5,5,.98);
+  backdrop-filter:blur(20px);
+
+  transition:.5s ease;
+  z-index:999;
+  padding:20px;
+}
+
+/* 開いた状態 */
+.slide-menu.active{
+  right:0;
+}
+
+/* header */
+.slide-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:40px;
+}
+
+/* input */
+.slide-header input{
+  width:90%;
+  padding:15px;
+  border:none;
+  border-bottom:1px solid #9b78ff;
+  background:transparent;
+  color:#fff;
+  font-size:18px;
+  outline:none;
+}
+
+/* close */
+.close-btn{
+  font-size:40px;
+  color:#9b78ff;
+  cursor:pointer;
+}
+
+/* links */
+.slide-links{
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  gap:25px;
+  margin-top:40px;
+}
+
+.slide-links a{
+  font-size:24px;
+  font-weight:700;
+  letter-spacing:2px;
+  transition:.3s;
+}
+
+.slide-links a:hover{
+  color:#9b78ff;
+}
+
+.hamburger{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  cursor:pointer;
+  z-index:1000;
+}
+
+.hamburger span{
+  width:28px;
+  height:2px;
+  background:#fff;
+  transition:.3s ease;
+}
+
+/* =====×変形状態===== */
+.hamburger.active span:nth-child(1){
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2){
+  opacity:0;
+}
+
+.hamburger.active span:nth-child(3){
+  transform: translateY(-8px) rotate(-45deg);
+}
 
 /* ==================================
-   Responsive
+   RESPONSIVE FIX（重要）
 ================================== */
 
+/* タブレット以下 */
 @media(max-width:1000px){
 
   header{
@@ -334,6 +346,14 @@ footer{
 
   nav{
     display:none;
+  }
+
+  .login-btn{
+    display:none;
+  }
+
+  .hamburger{
+    display:flex;
   }
 
   section{
@@ -347,115 +367,45 @@ footer{
   .section-title{
     font-size:50px;
   }
+}
 
-  .page-hero-title{
-    font-size:60px;
+/* スマホ（ここが今回のバグ原因修正） */
+@media(max-width:768px){
+
+  header{
+    flex-direction:row !important; /* ★縦並び防止 */
+    justify-content:space-between;
+    align-items:center;
+    gap:0;
+    padding:15px 20px;
   }
 
-  footer{
-    padding:30px 20px;
+  .logo{
+    font-size:42px;
+  }
+
+  nav{
+    display:none;
+  }
+
+  .login-btn{
+    display:none;
+  }
+
+  .footer-inner{
+    flex-direction:column;
+    text-align:center;
   }
 }
 
-@media (max-width: 768px) {
+/* 超小型 */
+@media(max-width:480px){
 
-  .container {
-    width: 95%;
+  .logo{
+    font-size:34px;
   }
 
-  header {
-    flex-direction: column;
-    gap: 15px;
-    padding: 15px 20px;
-  }
-
-  nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
-  }
-
-  .logo {
-    font-size: 42px;
-  }
-
-  .section-title {
-    font-size: 42px;
-  }
-
-  .section-text {
-    font-size: 15px;
-  }
-
-  .page-hero-title {
-    font-size: 48px;
-  }
-
-  .page-hero-subtitle {
-    font-size: 16px;
-  }
-
-  footer {
-    padding: 25px 20px;
-  }
-
-  .footer-inner {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
-@media (max-width: 480px) {
-
-  header {
-    padding: 15px;
-  }
-
-  .logo {
-    font-size: 34px;
-  }
-
-  nav {
-    display: none; /* スマホはハンバーガー推奨 */
-  }
-
-  .section-title {
-    font-size: 30px;
-    line-height: 1.2;
-  }
-
-  .section-text {
-    font-size: 14px;
-  }
-
-  .page-hero-title {
-    font-size: 34px;
-  }
-
-  .page-hero-subtitle {
-    font-size: 14px;
-  }
-
-  section {
-    margin: 60px auto;
-  }
-
-  .card-body {
-    padding: 20px;
-  }
-
-  .card-title {
-    font-size: 22px;
-  }
-
-  input,
-  textarea {
-    font-size: 14px;
-  }
-
-  .send-btn {
-    width: 100%;
-    text-align: center;
+  section{
+    margin:60px auto;
   }
 }

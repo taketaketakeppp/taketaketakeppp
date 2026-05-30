@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 /* ==================================
-   GLOBAL SETUP (横揺れ・はみ出し防止)
+   GLOBAL SETUP
 ================================== */
 html, body {
   overflow-x: hidden;
@@ -10,14 +10,25 @@ html, body {
   padding: 0;
 }
 
+/* ハンバーガー（PC非表示） */
+.hamburger {
+  display: none;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 2px;
+  background: #fff;
+  display: block;
+}
+
 /* ==================================
-   HERO SLIDER (First View)
+   HERO
 ================================== */
 .hero {
   position: relative;
   width: 100%;
-  height: calc(100vh - 120px); /* ヘッダー分の高さを引く */
-  min-height: 600px;
+  height: 100vh;
   overflow: hidden;
   background: #000;
 }
@@ -39,87 +50,74 @@ html, body {
   object-position: center;
 }
 
-/* メインビジュアルの上の黒グラデーション */
+/* オーバーレイ */
 .hero-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(5, 5, 5, 0.2) 0%,
-    rgba(5, 5, 5, 0.8) 100%
+    rgba(5, 5, 5, 0.2),
+    rgba(5, 5, 5, 0.8)
   );
   z-index: 2;
   pointer-events: none;
 }
 
-/* PC時のテキスト配置（画像に重ねる） */
+/* テキスト */
 .hero-content {
   position: absolute;
   bottom: 10%;
   left: 4%;
   z-index: 3;
   max-width: 800px;
-  pointer-events: none;
 }
 
 .hero-sub {
   font-size: 14px;
   letter-spacing: 4px;
   color: #9b78ff;
-  text-transform: uppercase;
   font-weight: 700;
   margin-bottom: 10px;
-  text-shadow: 0 0 10px rgba(155, 120, 255, 0.5);
 }
 
 .hero h1 {
   font-size: 110px;
   font-weight: 900;
   line-height: 0.9;
-  color: #ffffff;
-  letter-spacing: -2px;
-  margin-bottom: 5px;
-  text-shadow: 0 0 30px rgba(155, 120, 255, 0.6);
+  color: #fff;
 }
 
 .hero h2 {
   font-size: 32px;
   font-weight: 300;
   letter-spacing: 12px;
-  color: #ffffff;
+  color: #fff;
   opacity: 0.9;
-  margin-bottom: 30px;
 }
 
 .hero p {
   font-size: 16px;
   line-height: 1.8;
   color: #e0e0e0;
-  max-width: 550px;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
 }
 
-/* Swiperのカスタマイズ */
+/* Swiper UI */
 .swiper-button-next,
 .swiper-button-prev {
   color: #9b78ff !important;
-  z-index: 10;
-  transition: opacity 0.3s;
 }
 
 .swiper-pagination-bullet {
-  background: #ffffff !important;
+  background: #fff !important;
   opacity: 0.4;
 }
 
 .swiper-pagination-bullet-active {
   background: #9b78ff !important;
-  opacity: 1 !important;
-  box-shadow: 0 0 10px #9b78ff;
 }
 
 /* ==================================
-   PROJECTS (LATEST RELEASE / LIVE)
+   PROJECTS
 ================================== */
 .projects {
   display: flex;
@@ -130,305 +128,151 @@ html, body {
 
 .project-card {
   flex: 1;
-  background: linear-gradient(
-    135deg,
-    rgba(20, 20, 25, 0.8),
-    rgba(35, 35, 50, 0.8)
-  );
-  border: 1px solid rgba(155, 120, 255, 0.15);
-  backdrop-filter: blur(10px);
-  overflow: hidden;
-  transition: transform 0.4s, border-color 0.4s, box-shadow 0.4s;
-}
-
-.project-card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(155, 120, 255, 0.6);
-  box-shadow: 0 10px 30px rgba(155, 120, 255, 0.2);
+  background: rgba(20,20,25,0.8);
+  border: 1px solid rgba(155,120,255,0.15);
 }
 
 .project-card img {
   width: 100%;
   height: 320px;
   object-fit: cover;
-  transition: transform 0.6s;
-}
-
-.project-card:hover img {
-  transform: scale(1.03);
 }
 
 .project-info {
   padding: 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 20px;
-}
-
-.project-label {
-  font-size: 12px;
-  color: #9b78ff;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  margin-bottom: 10px;
 }
 
 .project-title {
   font-size: 36px;
   font-weight: 900;
-  color: #ffffff;
-  line-height: 1.1;
-}
-
-.project-text {
-  font-size: 15px;
-  color: #b0b0b0;
-  margin-top: 15px;
-  line-height: 1.7;
 }
 
 /* ==================================
-   CONTENTS (Service List)
+   CONTENTS
 ================================== */
 .service-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
-  margin-top: 60px;
-}
-
-.service-list a {
-  display: block;
 }
 
 .service-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 35px 40px;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.05);
   border-left: 4px solid #9b78ff;
-  transition: all 0.3s ease;
-}
-
-.service-item span:first-child {
-  font-size: 22px;
-  font-weight: 700;
-  color: #ffffff;
-  letter-spacing: 1px;
-}
-
-.service-item span:last-child {
-  font-size: 16px;
-  font-weight: 300;
-  color: #9b78ff;
-  opacity: 0.7;
-  font-family: monospace;
-}
-
-.service-item:hover {
-  background: rgba(155, 120, 255, 0.08);
-  border-color: rgba(155, 120, 255, 0.3);
-  padding-left: 50px;
 }
 
 /* ==================================
-   ABOUT (Grid Layout)
+   ABOUT
 ================================== */
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 80px;
-  align-items: center;
 }
 
-.about-image img {
-  width: 100%;
-  height: auto;
-  border: 1px solid rgba(155, 120, 255, 0.2);
-  box-shadow: 0 0 40px rgba(155, 120, 255, 0.15);
-}
-
+/* ==================================
+   BUTTON
+================================== */
 .hero-btn-1 {
-  display: inline-block;
-  margin-top: 40px;
   padding: 18px 45px;
   border: 1px solid #9b78ff;
   color: #9b78ff;
-  font-weight: 700;
-  letter-spacing: 2px;
-  background: transparent;
-  transition: .3s;
-  cursor: pointer;
+  display: inline-block;
 }
-
-.hero-btn-1:hover {
-  background: #9b78ff;
-  color: #ffffff;
-  box-shadow: 0 0 25px rgba(155, 120, 255, 0.6);
-}
-
-
-
 
 /* ==================================
-   RESPONSIVE DESIGN (レスポンシブ調整)
+   RESPONSIVE
 ================================== */
 
-/* タブレットサイズ（1024px以下） */
+/* ===== 1024px ===== */
 @media (max-width: 1024px) {
-  .hero h1 {
-    font-size: 80px;
-  }
-  .hero h2 {
-    font-size: 24px;
-    letter-spacing: 8px;
-  }
-  .projects {
-    gap: 20px;
-  }
-  .project-info {
-    padding: 25px;
-  }
-  .project-title {
-    font-size: 28px;
-  }
-  .about-grid {
-    gap: 40px;
-  }
-  .project-card:hover {
-    transform: none;
-    box-shadow: none;
-    border-color: rgba(155, 120, 255, 0.15);
-  }
+  .hero h1 { font-size: 80px; }
+  .hero h2 { font-size: 24px; }
 
-  .project-card:hover img {
-    transform: none;
-  }
+  .projects { gap: 20px; }
+  .project-title { font-size: 28px; }
 
-  .service-item:hover {
-    background: rgba(255, 255, 255, 0.02);
-    padding-left: 40px; /* 元に戻す */
-    border-color: rgba(255, 255, 255, 0.05);
-  }
-
-  .hero-btn-1:hover {
-    background: transparent;
-    color: #9b78ff;
-    box-shadow: none;
-  }
+  .about-grid { gap: 40px; }
 }
 
-/* スマホサイズ（768px以下） */
+/* ===== 768px ===== */
 @media (max-width: 768px) {
+
+  /* ハンバーガー表示 */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+
   .hero {
     height: auto;
-    min-height: 0;
-    background: #050505;
   }
 
-  /* 画像が大きすぎないように、スタイリッシュな横長（16:10）に固定 */
   .heroSwiper {
-    height: auto;
-    aspect-ratio: 16 / 10; 
-    max-height: 300px; /* 大きなスマホでもこれ以上縦に広がらないように上限を設定 */
+    height: 60vh;
   }
 
-  /* 画像の潰れ・引き伸ばしを完全に防ぐ */
-  .heroSwiper .swiper-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
-
-  /* テキストエリアの余白とバランスを調整 */
   .hero-content {
     position: relative;
-    bottom: unset;
-    left: unset;
-    right: unset;
+    bottom: auto;
+    left: auto;
     padding: 30px 5% 10px;
     background: #050505;
-    pointer-events: auto;
-  }
-
-  .hero .hero-sub {
-    font-size: 11px;
-    letter-spacing: 2px;
-    margin-bottom: 5px;
   }
 
   .hero h1 {
     font-size: 42px;
-    margin-top: 5px;
-    line-height: 1;
   }
 
   .hero h2 {
     font-size: 15px;
     letter-spacing: 3px;
-    margin-bottom: 20px;
   }
 
   .hero p {
     font-size: 14px;
-    line-height: 1.6;
-    color: #bdbdbd;
   }
 
-  /* PROJECTS: 縦並び */
+  /* PROJECTS */
   .projects {
     flex-direction: column;
     gap: 30px;
     margin: 60px auto;
   }
-  
+
   .project-card img {
-    height: 200px; /* ここもスマホに合わせて少しコンパクトに */
-  }
-  
-  .project-info {
-    padding: 25px;
+    height: 200px;
   }
 
-  /* CONTENTS: 1列 */
+  /* CONTENTS */
   .service-list {
     grid-template-columns: 1fr;
-    gap: 12px;
-  }
-  .service-item {
-    padding: 20px 25px;
-  }
-  .service-item span:first-child {
-    font-size: 16px;
   }
 
-  /* ABOUT: 縦並び */
+  /* ABOUT */
   .about-grid {
     grid-template-columns: 1fr;
-    gap: 30px;
   }
-  
+
   .hero-btn-1 {
     width: 100%;
     text-align: center;
-    margin-top: 25px;
   }
-  
-  /* スワイプしやすいように矢印は非表示 */
+
+  /* Swiper arrows非表示 */
   .swiper-button-next,
   .swiper-button-prev {
     display: none !important;
   }
 }
 
-/* 小さなスマホ（480px以下）の微調整 */
+/* ===== 480px ===== */
 @media (max-width: 480px) {
+
   .heroSwiper {
-    max-height: 240px; /* 画面が小さいスマホではさらに画像をコンパクトに */
+    max-height: 240px;
   }
 
   .hero h1 {
@@ -437,9 +281,8 @@ html, body {
 
   .hero h2 {
     font-size: 13px;
-    letter-spacing: 2px;
   }
-  
+
   .project-title {
     font-size: 22px;
   }

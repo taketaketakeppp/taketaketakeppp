@@ -19,7 +19,13 @@
   <header>
     <div class="logo">ae<span>spa</span></div>
 
-    <nav>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav class="nav" id="nav">
       <a href="index.html">HOME</a>
       <a href="news.html">NEWS</a>
       <a href="profile.html">PROFILE</a>
@@ -29,6 +35,22 @@
     </nav>
 
     <button class="login-btn">FANCLUB</button>
+    <div class="slide-menu" id="slideMenu">
+
+      <div class="slide-header">
+        <input type="text" id="searchInput" placeholder="Search...">
+      </div>
+
+      <div class="slide-links">
+        <a href="index.html">HOME</a>
+        <a href="news.html">NEWS</a>
+        <a href="profile.html">PROFILE</a>
+        <a href="discography.html">DISCOGRAPHY</a>
+        <a href="#">MOVIE</a>
+        <a href="#">GALLERY</a>
+      </div>
+
+    </div>
   </header>
 
   <!-- HERO SLIDER -->
@@ -136,10 +158,18 @@
     </div>
 
     <div class="service-list">
-      <a href="profile.html"><div class="service-item"><span>Member Profile</span><span>01</span></div></a>
-      <a href="profile.html"><div class="service-item"><span>Discography</span><span>02</span></div></a>
-      <a href="profile.html"><div class="service-item"><span>Music Video</span><span>03</span></div></a>
-      <a href="profile.html"><div class="service-item"><span>Photo Gallery</span><span>04</span></div></a>
+      <a href="profile.html">
+        <div class="service-item"><span>Member Profile</span><span>01</span></div>
+      </a>
+      <a href="profile.html">
+        <div class="service-item"><span>Discography</span><span>02</span></div>
+      </a>
+      <a href="profile.html">
+        <div class="service-item"><span>Music Video</span><span>03</span></div>
+      </a>
+      <a href="profile.html">
+        <div class="service-item"><span>Photo Gallery</span><span>04</span></div>
+      </a>
     </div>
 
   </section>
@@ -180,41 +210,41 @@
   </section>
 
   <!-- CONTACT -->
-<!-- LIVE / TOUR -->
-<section class="live-box">
+  <!-- LIVE / TOUR -->
+  <section class="live-box">
 
-  <div class="section-label">LIVE & TOUR</div>
+    <div class="section-label">LIVE & TOUR</div>
 
-  <div class="section-title">
-    EXPERIENCE<br>
-    THE STAGE
-  </div>
-
-  <div class="section-text">
-    aespaのライブパフォーマンスやツアー情報をまとめています。
-    圧倒的なステージ演出と世界観を体感してください。
-  </div>
-
-  <div class="live-list">
-
-    <div class="live-item">
-      <div class="live-date">2026.03</div>
-      <div class="live-title">WORLD TOUR - TOKYO</div>
+    <div class="section-title">
+      EXPERIENCE<br>
+      THE STAGE
     </div>
 
-    <div class="live-item">
-      <div class="live-date">2025.12</div>
-      <div class="live-title">SMTOWN LIVE</div>
+    <div class="section-text">
+      aespaのライブパフォーマンスやツアー情報をまとめています。
+      圧倒的なステージ演出と世界観を体感してください。
     </div>
 
-    <div class="live-item">
-      <div class="live-date">2025.09</div>
-      <div class="live-title">SUMMER FESTIVAL</div>
+    <div class="live-list">
+
+      <div class="live-item">
+        <div class="live-date">2026.03</div>
+        <div class="live-title">WORLD TOUR - TOKYO</div>
+      </div>
+
+      <div class="live-item">
+        <div class="live-date">2025.12</div>
+        <div class="live-title">SMTOWN LIVE</div>
+      </div>
+
+      <div class="live-item">
+        <div class="live-date">2025.09</div>
+        <div class="live-title">SUMMER FESTIVAL</div>
+      </div>
+
     </div>
 
-  </div>
-
-</section>  <!-- FOOTER -->
+  </section> <!-- FOOTER -->
   <footer>
 
     <div class="footer-inner">
@@ -235,7 +265,8 @@
     </div>
 
   </footer>
-
+<script src="js/script.js"></script>
+<script src="js/discography.js"></script>
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
@@ -262,7 +293,7 @@
     });
   </script>
 
-  <script src="js/script.js"></script>
 
 </body>
+
 </html>
