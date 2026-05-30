@@ -296,6 +296,27 @@ html, body {
   .about-grid {
     gap: 40px;
   }
+  .project-card:hover {
+    transform: none;
+    box-shadow: none;
+    border-color: rgba(155, 120, 255, 0.15);
+  }
+
+  .project-card:hover img {
+    transform: none;
+  }
+
+  .service-item:hover {
+    background: rgba(255, 255, 255, 0.02);
+    padding-left: 40px; /* 元に戻す */
+    border-color: rgba(255, 255, 255, 0.05);
+  }
+
+  .hero-btn-1:hover {
+    background: transparent;
+    color: #9b78ff;
+    box-shadow: none;
+  }
 }
 
 /* スマホサイズ（768px以下） */
