@@ -1,0 +1,35 @@
+.news-page{
+    width:92%;
+    margin:120px auto;
+}
+
+.news-list{
+    margin-top:60px;
+}
+
+.news-item{
+    display:flex;
+    gap:60px;
+    padding:35px 0;
+    border-bottom:1px solid rgba(155,120,255,.15);
+    transition:.3s;
+}
+
+.news-item:hover{
+    padding-left:20px;
+    border-color:#9b78ff;
+}
+
+.news-date{
+    min-width:140px;
+    color:#9b78ff;
+    font-weight:700;
+    letter-spacing:2px;
+}
+
+.news-title{
+    color:#fff;
+    font-size:22px;
+    line-height:1.7;
+    font-weight:700;
+}

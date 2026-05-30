@@ -1,0 +1,68 @@
+
+
+/* タイトル */
+.movie-title {
+  text-align: center;
+  margin: 80px 0 40px;
+}
+
+.movie-title h1 {
+  font-size: 60px;
+  letter-spacing: 4px;
+}
+
+.movie-title p {
+  color: #aaa;
+  margin-top: 10px;
+}
+
+/* メインレイアウト */
+.movie-main {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* YouTube */
+.video-wrapper {
+  flex: 2;
+  position: relative;
+  padding-top: 56.25%; /* 16:9 */
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 20px;
+}
+
+/* 右プレイリスト */
+.movie-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.movie-item {
+  padding: 15px;
+  background: #111;
+  border: 1px solid #222;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.movie-item:hover {
+  background: #222;
+}
+
+.movie-item.active {
+  background: #fff;
+  color: #000;
+}

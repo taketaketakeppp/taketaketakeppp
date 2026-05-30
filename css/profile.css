@@ -1,0 +1,154 @@
+.profile-page{
+    width:90%;
+    max-width:1400px;
+    margin:80px auto;
+    display:grid;
+    grid-template-columns:350px 1fr;
+    gap:80px;
+    min-height:750px;
+}
+
+/* ==========================
+   LEFT SIDE
+========================== */
+
+.profile-left h1{
+    font-size:60px;
+    font-weight:700;
+    margin-bottom:60px;
+    color:#ffffff;
+    text-shadow:0 0 15px rgba(155,120,255,.5);
+}
+
+.member-list{
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+
+.member{
+    font-size:42px;
+    font-weight:700;
+    color:#666;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.member:hover,
+.member.active{
+    color:#9b78ff;
+    transform:translateX(15px);
+    text-shadow:
+        0 0 10px rgba(155,120,255,.7),
+        0 0 20px rgba(155,120,255,.4);
+}
+
+/* ==========================
+   RIGHT SIDE
+========================== */
+
+.profile-right{
+    position:relative;
+    overflow:hidden;
+    background:none;
+    border:none;
+    box-shadow:none;
+    border-radius:0;
+}
+#memberImage{
+    width:100%;
+    max-height:750px;
+    object-fit:cover;
+    display:block;
+    transition:.4s;
+}
+
+/* ==========================
+   IMAGE OVERLAY
+========================== */
+
+.profile-right::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+    linear-gradient(
+        to top,
+        rgba(0,0,0,.8),
+        rgba(0,0,0,.1)
+    );
+    pointer-events:none;
+}
+
+/* ==========================
+   MEMBER DETAIL
+========================== */
+
+.member-detail{
+    position:absolute;
+    bottom:40px;
+    left:40px;
+    z-index:2;
+
+    /* background:rgba(20,20,30,.85); */
+    /* backdrop-filter:blur(15px); */
+
+    /* border:1px solid rgba(155,120,255,.25); */
+
+    padding:25px 35px;
+    border-radius:16px;
+    
+}
+
+.member-detail h2{
+    font-size:42px;
+    margin-bottom:10px;
+    color:#ffffff;
+}
+
+.member-detail p{
+    font-size:18px;
+    color:#d0d0d0;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:900px){
+
+    .profile-page{
+        grid-template-columns:1fr;
+        gap:40px;
+    }
+
+    .profile-left h1{
+        font-size:40px;
+    }
+
+    .member{
+        font-size:28px;
+    }
+
+    #memberImage{
+        width:100%;
+        height:auto;
+        max-height:500px;
+        object-fit:contain;
+    }
+
+    .member-detail{
+        left:20px;
+        right:20px;
+        bottom:20px;
+        padding:20px;
+    }
+
+    .member-detail h2{
+        font-size:28px;
+    }
+
+    .member-detail p{
+        font-size:16px;
+    }
+}
