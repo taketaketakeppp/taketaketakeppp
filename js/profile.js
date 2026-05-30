@@ -76,43 +76,31 @@ modal.addEventListener("click", (e) => {
 });
 
 /* ==========================
-   スワイプ対応（安定版）
+   スワイプ（安定版：touchstart + touchendのみ）
 ========================== */
 let startX = 0;
 let startY = 0;
-let isSwiping = false;
 
 modal.addEventListener("touchstart", (e) => {
     startX = e.touches[0].clientX;
     startY = e.touches[0].clientY;
-    isSwiping = false;
-});
-
-modal.addEventListener("touchmove", (e) => {
-    const moveX = e.touches[0].clientX;
-    const moveY = e.touches[0].clientY;
-
-    const diffX = Math.abs(moveX - startX);
-    const diffY = Math.abs(moveY - startY);
-
-    // 横方向が明確に優勢な時だけスワイプ判定
-    if (diffX > 10 && diffX > diffY) {
-        isSwiping = true;
-        e.preventDefault(); // 背景スクロール防止
-    }
-});
+}, { passive: true });
 
 modal.addEventListener("touchend", (e) => {
-    if (!isSwiping) return;
-
     const endX = e.changedTouches[0].clientX;
-    const diff = startX - endX;
+    const endY = e.changedTouches[0].clientY;
 
-    if (diff > 50) {
-        renderAll(currentIndex + 1); // 左スワイプ
-    } 
-    else if (diff < -50) {
-        renderAll(currentIndex - 1); // 右スワイプ
+    const diffX = endX - startX;
+    const diffY = Math.abs(endY - startY);
+
+    // 横移動が縦より明確に大きい場合のみ反応
+    if (Math.abs(diffX) > 60 && Math.abs(diffX) > diffY) {
+
+        if (diffX < 0) {
+            renderAll(currentIndex + 1); // 左スワイプ
+        } else {
+            renderAll(currentIndex - 1); // 右スワイプ
+        }
     }
 });
 
