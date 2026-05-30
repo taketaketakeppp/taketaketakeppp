@@ -7,7 +7,7 @@ const albums = [
 {title:"SPICY",date:"2023.05.08",image:"img/spicy.jpg"},
 {title:"MY WORLD",date:"2023.05.08",image:"img/myworld.jpg"},
 {title:"GIRLS",date:"2022.07.08",image:"img/girls.jpg"},
-{title:"LIFE'S TOO SHORT",date:"2022.06.24",image:"img/lifestooshort.jpg"},
+{title:"LIFE'S TOO SHORT",date:"2022.06.24",image:"img/aespa_pink.png"},
 {title:"DREAMS COME TRUE",date:"2021.12.20",image:"img/dreamscometrue.jpg"},
 {title:"SAVAGE",date:"2021.10.05",image:"img/savage.jpg"},
 {title:"NEXT LEVEL",date:"2021.05.17",image:"img/nextlevel.jpg"},
