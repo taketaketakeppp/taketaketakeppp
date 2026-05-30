@@ -125,7 +125,7 @@ body {
 
 .modal-content {
     position: relative;
-    background: #111;
+    /* background: #111; */
     padding: 25px;
     border-radius: 18px;
     width: 90%;

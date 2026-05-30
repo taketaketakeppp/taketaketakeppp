@@ -1,13 +1,8 @@
-
 const members = document.querySelectorAll(".member");
 
 const image = document.getElementById("memberImage");
 const name = document.getElementById("memberName");
 const role = document.getElementById("memberRole");
-
-/* ==========================
-   MODAL
-========================== */
 
 const modal = document.getElementById("modal");
 const modalImage = document.getElementById("modalImage");
@@ -19,102 +14,58 @@ const modalClose = document.getElementById("modalClose");
 const modalPrev = document.getElementById("modalPrev");
 const modalNext = document.getElementById("modalNext");
 
-/* ==========================
-   状態管理（これが全て）
-========================== */
-
 let currentIndex = 0;
 
 /* ==========================
-   初期状態を同期
+   共通レンダリング
 ========================== */
-
-function init() {
-    const active = document.querySelector(".member.active");
-    if (active) {
-        currentIndex = Array.from(members).indexOf(active);
-    }
-}
-
-init();
-
-/* ==========================
-   メイン更新関数（最重要）
-========================== */
-
-function goTo(index) {
-
+function renderAll(index) {
     currentIndex = (index + members.length) % members.length;
 
     const m = members[currentIndex];
 
+    // active更新
     members.forEach(el => el.classList.remove("active"));
     m.classList.add("active");
 
-    // アニメ
-    image.style.opacity = "0";
-    image.style.transform = "scale(0.98)";
+    // メイン表示
+    image.src = m.dataset.img;
+    name.textContent = m.dataset.name;
+    role.textContent = m.dataset.role;
 
-    setTimeout(() => {
-
-        image.src = m.dataset.img;
-        name.textContent = m.dataset.name;
-        role.textContent = m.dataset.role;
-
-        image.onload = () => {
-            image.style.opacity = "1";
-            image.style.transform = "scale(1)";
-        };
-
-    }, 150);
-}
-
-/* ==========================
-   左メニュー（クリック）
-========================== */
-
-members.forEach((m, i) => {
-    m.addEventListener("click", () => {
-        goTo(i);
-    });
-});
-
-/* ==========================
-   矢印（モーダル内）
-========================== */
-
-modalPrev.addEventListener("click", (e) => {
-    e.stopPropagation();
-    goTo(currentIndex - 1);
-});
-
-modalNext.addEventListener("click", (e) => {
-    e.stopPropagation();
-    goTo(currentIndex + 1);
-});
-
-/* ==========================
-   画像クリック → モーダル
-========================== */
-
-image.addEventListener("click", () => {
-
-    const m = members[currentIndex];
-
+    // モーダル表示
     modalImage.src = m.dataset.img;
     modalName.textContent = m.dataset.name;
     modalRole.textContent = m.dataset.role;
     modalDesc.textContent = m.dataset.desc;
+}
 
-    modal.classList.add("show");
+/* ==========================
+   左メニュークリック
+========================== */
+members.forEach((m, i) => {
+    m.addEventListener("click", () => renderAll(i));
 });
 
 /* ==========================
-   閉じる
+   矢印ボタン
 ========================== */
+modalPrev.addEventListener("click", () => {
+    renderAll(currentIndex - 1);
+});
 
-modalClose.addEventListener("click", (e) => {
-    e.stopPropagation();
+modalNext.addEventListener("click", () => {
+    renderAll(currentIndex + 1);
+});
+
+/* ==========================
+   モーダル開閉
+========================== */
+image.addEventListener("click", () => {
+    modal.classList.add("show");
+});
+
+modalClose.addEventListener("click", () => {
     modal.classList.remove("show");
 });
 
@@ -125,19 +76,28 @@ modal.addEventListener("click", (e) => {
 });
 
 /* ==========================
-   キーボード
+   スワイプ対応（モーダル）
 ========================== */
+let startX = 0;
 
-window.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-        modal.classList.remove("show");
-    }
+modal.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+});
 
-    if (e.key === "ArrowLeft") {
-        goTo(currentIndex - 1);
-    }
+modal.addEventListener("touchend", (e) => {
+    const endX = e.changedTouches[0].clientX;
+    const diff = startX - endX;
 
-    if (e.key === "ArrowRight") {
-        goTo(currentIndex + 1);
+    // 50px以上動いたらスワイプ判定
+    if (diff > 50) {
+        renderAll(currentIndex + 1); // ←左スワイプ
+    } 
+    else if (diff < -50) {
+        renderAll(currentIndex - 1); // ←右スワイプ
     }
 });
+
+/* ==========================
+   初期化
+========================== */
+renderAll(0);
