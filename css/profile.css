@@ -44,7 +44,7 @@
     color: #9b78ff;
     transform: translateX(15px);
     text-shadow: 0 0 10px rgba(155, 120, 255, .7),
-                 0 0 20px rgba(155, 120, 255, .4);
+        0 0 20px rgba(155, 120, 255, .4);
 }
 
 /* ==========================
@@ -53,27 +53,36 @@
 
 .profile-right {
     position: relative;
-    overflow: hidden;
     display: flex;
     flex-direction: column;
-    border-radius: 14px;
+    gap: 0;
+    overflow: hidden;
+}
+
+.profile-right::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, .6),
+            rgba(0, 0, 0, .05));
+    pointer-events: none;
 }
 
 #memberImage {
     width: 100%;
-    height: 45vh;
+    height: 60vh; /* 少し大きめにする */
     object-fit: cover;
-    transition: .4s;
+    display: block;
 }
-
 /* overlay */
 .profile-right::after {
     content: "";
     position: absolute;
     inset: 0;
     background: linear-gradient(to top,
-        rgba(0, 0, 0, .6),
-        rgba(0, 0, 0, .05));
+            rgba(0, 0, 0, .6),
+            rgba(0, 0, 0, .05));
     pointer-events: none;
 }
 
@@ -150,6 +159,12 @@
     }
 
     #memberImage {
+    margin: 0;
+    padding: 0;
+    display: block;
+
         height: 35vh;
+        transition: opacity .2s ease;
+
     }
 }
