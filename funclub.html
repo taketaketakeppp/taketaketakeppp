@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>aespa Fan Site</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/profile.css">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+</head>
+
+<body>
+
+    <header><a href="index.html">
+            <div class="logo">ae<span>spa</span></div>
+        </a>
+
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav class="nav" id="nav">
+            <a href="index.html">HOME</a>
+            <a href="news.html">NEWS</a>
+            <a href="profile.html">PROFILE</a>
+            <a href="discography.html">DISCOGRAPHY</a>
+            <a href="movie.html">MOVIE</a>
+            <a href="gallery.html">GALLERY</a>
+        </nav>
+
+        <button class="login-btn">FANCLUB</button>
+        <div class="slide-menu" id="slideMenu">
+
+            <div class="slide-header">
+                <input type="text" id="searchInput" placeholder="Search...">
+            </div>
+
+            <div class="slide-links">
+                <a href="index.html">HOME</a>
+                <a href="news.html">NEWS</a>
+                <a href="profile.html">PROFILE</a>
+                <a href="discography.html">DISCOGRAPHY</a>
+                <a href="movie.html">MOVIE</a>
+                <a href="gallery.html">GALLERY</a>
+            </div>
+
+        </div>
+    </header>
+
+    <section class="profile-page">
+
+        <div class="profile-left">
+
+            <h1>MEMBER PROFILES</h1>
+
+            <div class="member-list">
+
+                <div class="member active" data-img="img/profile_karina.png" data-name="KARINA"
+                    data-role="Leader / Main Dancer" data-desc="aespaのリーダー。圧倒的ビジュアルとパフォーマンス">
+                    KARINA
+                </div>
+
+                <div class="member" data-img="img/profile_giselle.png" data-name="GISELLE" data-role="Main Rapper"
+                    data-desc="ラップと歌のバランスが強いメンバー">
+                    GISELLE
+                </div>
+
+                <div class="member" data-img="img/profile_winter.png" data-name="WINTER" data-role="Lead Vocal"
+                    data-desc="透明感のあるボーカル">
+                    WINTER
+                </div>
+
+                <div class="member" data-img="img/profile_ningning.png" data-name="NINGNING" data-role="Main Vocal"
+                    data-desc="圧倒的な声量とパフォーマンス">
+                    NINGNING
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="profile-right">
+
+            <img id="memberImage" src="img/profile_karina.png" alt="KARINA">
+
+            <div class="member-detail">
+
+                <h2 id="memberName">KARINA</h2>
+
+                <p id="memberRole">Leader / Main Dancer</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- モーダル -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span id="modalClose" class="modal-close">×</span>
+
+            <img id="modalImage" src="" alt="">
+            <h2 id="modalName"></h2>
+            <p id="modalRole"></p>
+            <p id="modalDesc"></p>
+
+            <!-- 矢印ナビ -->
+            <span id="modalPrev" class="modal-arrow left">◀</span>
+            <span id="modalNext" class="modal-arrow right">▶</span>
+        </div>
+    </div>
+    <footer>
+
+        <div class="footer-inner">
+
+            <div>
+                <div>
+                    AESPA FAN SITE
+                </div>
+
+                <div class="copyright">
+                    KARINA ・ GISELLE ・ WINTER ・ NINGNING
+                </div>
+            </div>
+
+            <div class="socials">
+                <span>Instagram</span>
+                <span>YouTube</span>
+                <span>TikTok</span>
+            </div>
+
+            <div class="copyright">
+                © 2026 AESPA FAN SITE
+            </div>
+
+        </div>
+
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/profile.js"></script>
+
+</body>
+
+</html>
