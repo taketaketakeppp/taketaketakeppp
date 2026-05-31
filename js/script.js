@@ -45,8 +45,8 @@ const slideMenu = document.getElementById("slideMenu");
 
 if (hamburger && slideMenu) {
   hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("active");
-    slideMenu.classList.toggle("active");
+    hamburger.classList.toggle("active");   // ← ×に変形
+    slideMenu.classList.toggle("active");    // ← メニュー開閉
   });
 }
 

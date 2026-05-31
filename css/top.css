@@ -12,17 +12,6 @@ html, body {
   padding: 0;
 }
 
-/* ハンバーガー（PC非表示） */
-.hamburger {
-  display: none;
-}
-
-.hamburger span {
-  width: 25px;
-  height: 2px;
-  background: #fff;
-  display: block;
-}
 
 /* ==================================
    HERO
