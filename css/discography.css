@@ -4,7 +4,6 @@ body {
   font-family: Helvetica, Arial, sans-serif;
   letter-spacing: 0.5px;
 }
-
 /* ===== PAGE HEADER ===== */
 .page-header {
   text-align: center;
@@ -127,6 +126,11 @@ body {
 }
 
 /* ===== RESPONSIVE ===== */
+@media(min-width:1024px) {
+.hamburger{
+  display: none;
+}
+}
 @media(max-width:1000px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
