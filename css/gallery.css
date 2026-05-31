@@ -105,6 +105,13 @@
   color:white;
 }
 
+@media(min-width:1024px){
+
+.hamburger{
+  display:none;
+}
+}
+
 @media(max-width:768px){
 
 .page-header h1{
