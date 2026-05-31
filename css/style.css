@@ -225,7 +225,7 @@ footer{
   justify-content:space-between;
   align-items:center;
   flex-wrap:wrap;
-  gap:30px;
+  gap:10px;
 }
 
 .socials{
@@ -336,7 +336,11 @@ footer{
 /* ==================================
    RESPONSIVE FIX（重要）
 ================================== */
-
+@media(max-width:1024px){
+  footer{
+    padding: 50px 20px;
+  }
+}
 /* タブレット以下 */
 @media(max-width:1000px){
 
@@ -400,7 +404,9 @@ footer{
 
 /* 超小型 */
 @media(max-width:480px){
-
+footer{
+  padding: 10px 20px;;
+}
   .logo{
     font-size:34px;
   }
