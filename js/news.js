@@ -108,7 +108,40 @@ modal.addEventListener("touchend", (e) => {
         }
     }
 });
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const buttons = document.querySelectorAll(".news-filter button");
+  const items = document.querySelectorAll(".news-card");
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+
+      // active切替
+      buttons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const filter = btn.dataset.filter;
+
+      items.forEach(item => {
+        const category = item.dataset.category;
+
+        if (filter === "all" || filter === category) {
+          item.style.display = "block";
+        } else {
+          item.style.display = "none";
+        }
+      });
+
+    });
+  });
+
+});
 /* ==========================
    初期化
 ========================== */
 renderAll(0);
+

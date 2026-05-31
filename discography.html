@@ -2,22 +2,31 @@
 <html lang="ja">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Discography</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>aespa Fan Site</title>
 
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/discography.css">
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 </head>
 
 <body>
 
-  <header>
+  <header><a href="index.html">
     <div class="logo">ae<span>spa</span></div>
+</a>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
 
-    <nav>
-       <a href="index.html">HOME</a>
+    <nav class="nav" id="nav">
+      <a href="index.html">HOME</a>
       <a href="news.html">NEWS</a>
       <a href="profile.html">PROFILE</a>
       <a href="discography.html">DISCOGRAPHY</a>
@@ -26,34 +35,170 @@
     </nav>
 
     <button class="login-btn">FANCLUB</button>
-  </header>
-  <section class="discography-wheel">
+    <div class="slide-menu" id="slideMenu">
 
-    <div class="featured-album">
-      <img id="album-cover" src="img/whiplash.jpg" alt="">
-      <h2 id="album-title">WHIPLASH</h2>
-      <p id="album-date">2024.10.21</p>
+      <div class="slide-header">
+        <input type="text" id="searchInput" placeholder="Search...">
+      </div>
+
+      <div class="slide-links">
+        <a href="index.html">HOME</a>
+        <a href="news.html">NEWS</a>
+        <a href="profile.html">PROFILE</a>
+        <a href="discography.html">DISCOGRAPHY</a>
+        <a href="#">MOVIE</a>
+        <a href="#">GALLERY</a>
+      </div>
+
     </div>
+  </header>
 
-    <div class="wheel-container"></div>
-  </section>
+
+
+<!-- HERO -->
+<section class="page-header">
+  <p class="sub">MUSIC</p>
+  <h1>DISCOGRAPHY</h1>
+</section>
+
+
+<!-- FILTER -->
+<nav class="filter">
+  <button class="active" data-filter="all">ALL</button>
+  <button data-filter="album">ALBUM</button>
+  <button data-filter="single">SINGLE</button>
+  <button data-filter="digital">DIGITAL</button>
+</nav>
+
+
+<!-- CONTENT -->
+<section class="container">
+
+  <div class="year">2024</div>
+
+  <div class="grid">
+
+    <article class="item" data-category="album">
+      <img src="img/armageddon.jpg">
+      <div class="info">
+        <h3>Armageddon</h3>
+        <span>Full Album</span>
+      </div>
+    </article>
+
+    <article class="item" data-category="digital">
+      <img src="img/supernova.jpg">
+      <div class="info">
+        <h3>Supernova</h3>
+        <span>Digital Single</span>
+      </div>
+    </article>
+
+  </div>
+
+
+  <div class="year">2023</div>
+
+  <div class="grid">
+
+    <article class="item" data-category="album">
+      <img src="img/my-world.jpg">
+      <div class="info">
+        <h3>MY WORLD</h3>
+        <span>Mini Album</span>
+      </div>
+    </article>
+
+    <article class="item" data-category="single">
+      <img src="img/spicy.jpg">
+      <div class="info">
+        <h3>Spicy</h3>
+        <span>Title Track</span>
+      </div>
+    </article>
+
+    <article class="item" data-category="album">
+      <img src="img/drama.jpg">
+      <div class="info">
+        <h3>Drama</h3>
+        <span>Mini Album</span>
+      </div>
+    </article>
+
+  </div>
+
+
+  <div class="year">2022</div>
+
+  <div class="grid">
+
+    <article class="item" data-category="single">
+      <img src="img/dreams-come-true.jpg">
+      <div class="info">
+        <h3>Dreams Come True</h3>
+        <span>Remake Single</span>
+      </div>
+    </article>
+
+  </div>
+
+
+  <div class="year">2021</div>
+
+  <div class="grid">
+
+    <article class="item" data-category="digital">
+      <img src="img/next-level.jpg">
+      <div class="info">
+        <h3>Next Level</h3>
+        <span>Digital Single</span>
+      </div>
+    </article>
+
+    <article class="item" data-category="album">
+      <img src="img/savage.jpg">
+      <div class="info">
+        <h3>Savage</h3>
+        <span>Mini Album</span>
+      </div>
+    </article>
+
+  </div>
+
+
+  <div class="year">2020</div>
+
+  <div class="grid">
+
+    <article class="item" data-category="digital">
+      <img src="img/blackmamba.jpg">
+      <div class="info">
+        <h3>Black Mamba</h3>
+        <span>Debut Single</span>
+      </div>
+    </article>
+
+  </div>
+
+</section>
+
+
 <footer>
   <div class="footer-inner">
-
     <div class="socials">
       <span>Instagram</span>
       <span>YouTube</span>
       <span>TikTok</span>
     </div>
-
-    <div class="copyright">© 2026 AESPA FAN SITE</div>
-
+    <div class="copyright">
+      © 2026 aespa FAN SITE
+    </div>
   </div>
 </footer>
-  <script src="js/discography.js">
 
 
-  </script>
+<script src="js/script.js"></script>
+<script src="js/discography.js"></script>
+
 </body>
-
 </html>

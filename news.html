@@ -62,51 +62,43 @@
 
 <!-- FILTER -->
 <section class="news-filter">
-  <button class="active">ALL</button>
-  <button>NEWS</button>
-  <button>LIVE</button>
-  <button>RELEASE</button>
+  <button class="active" data-filter="all">ALL</button>
+  <button data-filter="news">NEWS</button>
+  <button data-filter="live">LIVE</button>
+  <button data-filter="release">RELEASE</button>
 </section>
 
-<!-- NEWS LIST -->
 <section class="news-page">
 
   <div class="news-list">
 
-    <a href="#" class="news-card">
+    <a href="#" class="news-card" data-category="live">
       <div class="news-meta">
         <span class="date">2026.05.25</span>
         <span class="tag">LIVE</span>
       </div>
-      <h3 class="title">
-        MY-J presents aespa JAPAN FANMEETING 2026 “MY CLASSMaeTE”
-      </h3>
+      <h3 class="title">FANMEETING 2026 開催決定</h3>
     </a>
 
-    <a href="#" class="news-card">
+    <a href="#" class="news-card" data-category="release">
       <div class="news-meta">
         <span class="date">2026.05.14</span>
-        <span class="tag">GOODS</span>
-      </div>
-      <h3 class="title">
-        aespa MINI FANLIGHT KEYRING ver.2 販売決定
-      </h3>
-    </a>
-
-    <a href="#" class="news-card">
-      <div class="news-meta">
-        <span class="date">2026.05.11</span>
         <span class="tag">RELEASE</span>
       </div>
-      <h3 class="title">
-        The 2nd Album「LEMONADE」日本限定特典付き予約開始
-      </h3>
+      <h3 class="title">MINI ALBUM予約開始</h3>
+    </a>
+
+    <a href="#" class="news-card" data-category="news">
+      <div class="news-meta">
+        <span class="date">2026.05.11</span>
+        <span class="tag">NEWS</span>
+      </div>
+      <h3 class="title">新ビジュアル公開</h3>
     </a>
 
   </div>
 
 </section>
-
 <footer>
   <div class="footer-inner">
     <div class="socials">
