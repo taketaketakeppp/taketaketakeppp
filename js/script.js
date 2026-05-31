@@ -1,6 +1,7 @@
 /* =========================
    CONTACT FORM
 ========================= */
+
 const form = document.getElementById('contactForm');
 
 if (form) {
@@ -13,28 +14,14 @@ if (form) {
 /* =========================
    ALBUM DATA
 ========================= */
+
 const albums = [
   { title: "WHIPLASH", date: "2024.10.21", image: "img/whiplash.jpg" },
-  { title: "ARMAGEDDON", date: "2024.05.27", image: "img/armageddon.jpg" },
-  { title: "SUPERNOVA", date: "2024.05.13", image: "img/supernova.jpg" },
-  { title: "DRAMA", date: "2023.11.10", image: "img/drama.jpg" },
-  { title: "BETTER THINGS", date: "2023.08.18", image: "img/betterthings.jpg" },
-  { title: "SPICY", date: "2023.05.08", image: "img/spicy.jpg" },
-  { title: "MY WORLD", date: "2023.05.08", image: "img/myworld.jpg" },
-  { title: "GIRLS", date: "2022.07.08", image: "img/girls.jpg" },
-  { title: "LIFE'S TOO SHORT", date: "2022.06.24", image: "img/lifestooshort.jpg" },
-  { title: "DREAMS COME TRUE", date: "2021.12.20", image: "img/dreamscometrue.jpg" },
-  { title: "SAVAGE", date: "2021.10.05", image: "img/savage.jpg" },
-  { title: "NEXT LEVEL", date: "2021.05.17", image: "img/nextlevel.jpg" },
-  { title: "FOREVER", date: "2021.02.05", image: "img/forever.jpg" },
-  { title: "BLACK MAMBA", date: "2020.11.17", image: "img/blackmamba.jpg" }
+  { title: "ARMAGEDDON", date: "2024.05.27", image: "img/armageddon.jpg" }
 ];
 
 let current = 0;
 
-/* =========================
-   DISPLAY
-========================= */
 function updateDisplay() {
   const cover = document.getElementById("album-cover");
   const title = document.getElementById("album-title");
@@ -50,32 +37,23 @@ function updateDisplay() {
 updateDisplay();
 
 /* =========================
-   HAMBURGER + SLIDE MENU
+   HAMBURGER MENU
 ========================= */
-const hamburger = document.getElementById("hamburger");
-const nav = document.getElementById("nav");
-const slideMenu = document.getElementById("slideMenu");
-const closeBtn = document.getElementById("closeBtn");
 
-if (hamburger) {
+const hamburger = document.getElementById("hamburger");
+const slideMenu = document.getElementById("slideMenu");
+
+if (hamburger && slideMenu) {
   hamburger.addEventListener("click", () => {
     hamburger.classList.toggle("active");
-
-    if (nav) nav.classList.toggle("active");
-    if (slideMenu) slideMenu.classList.toggle("active");
-  });
-}
-
-if (closeBtn) {
-  closeBtn.addEventListener("click", () => {
-    slideMenu.classList.remove("active");
-    hamburger.classList.remove("active");
+    slideMenu.classList.toggle("active");
   });
 }
 
 /* =========================
    SEARCH
 ========================= */
+
 const searchInput = document.getElementById("searchInput");
 
 if (searchInput) {

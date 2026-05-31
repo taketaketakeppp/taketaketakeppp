@@ -33,3 +33,15 @@
     line-height:1.7;
     font-weight:700;
 }
+
+
+@media (max-width: 768px) {
+    .news-title{
+    color:#fff;
+    font-size:12px;
+    line-height:1.7;
+    font-weight:200;
+}
+
+
+}
