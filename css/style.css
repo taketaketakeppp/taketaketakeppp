@@ -45,7 +45,6 @@ header{
   z-index:100;
 }
 
-/* LOGO */
 .logo{
   font-size:64px;
   font-weight:900;
@@ -59,7 +58,6 @@ header{
   color:#9b78ff;
 }
 
-/* NAV */
 nav{
   display:flex;
   align-items:center;
@@ -78,7 +76,6 @@ nav a:hover{
   color:#9b78ff;
 }
 
-/* FANCLUB */
 .login-btn{
   border:1px solid #9b78ff;
   padding:12px 24px;
@@ -209,48 +206,53 @@ section{
 }
 
 /* ==================================
-   Footer
+   FOOTER（★ここだけ修正）
 ================================== */
 
 footer{
   background:#080808;
   color:#fff;
-  padding: 5px 20px;
-  /* margin-top:100px; */
+  padding: 50px 20px;
   border-top:1px solid rgba(155,120,255,.2);
 }
 
 .footer-inner{
-  position: relative;
-  min-height: 120px; /* フッターの高さ確保 */
-}
-
-/* コピーライト：完全中央 */
-.copyright{
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  color: rgba(255,255,255,.5);
-}
-
-/* SNSアイコン：右下 */
-.socials{
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
-  display: flex;
-  gap: 14px;
-  align-items: center;
-}.socials{
   display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
   gap:20px;
 }
 
+/* コピーライト（絶対配置やめる） */
 .copyright{
   color:rgba(255,255,255,.5);
+  text-align:center;
 }
-/* ===== SLIDE MENU ===== */
+
+/* SNS */
+.socials{
+  display:flex;
+  gap:14px;
+  align-items:center;
+}
+
+.socials img{
+  width:32px;
+  height:32px;
+  object-fit:contain;
+  opacity:0.85;
+  transition:0.3s;
+}
+
+.socials img:hover{
+  opacity:1;
+  transform:translateY(-2px);
+}
+
+/* ==================================
+   SLIDE MENU
+================================== */
 
 .slide-menu{
   position:fixed;
@@ -267,12 +269,10 @@ footer{
   padding:20px;
 }
 
-/* 開いた状態 */
 .slide-menu.active{
   right:0;
 }
 
-/* header */
 .slide-header{
   display:flex;
   justify-content:space-between;
@@ -280,7 +280,6 @@ footer{
   margin-bottom:40px;
 }
 
-/* input */
 .slide-header input{
   width:90%;
   padding:15px;
@@ -292,18 +291,16 @@ footer{
   outline:none;
 }
 
-/* close */
 .close-btn{
   font-size:40px;
   color:#9b78ff;
   cursor:pointer;
 }
 
-/* links */
 .slide-links{
   display:flex;
   flex-direction:column;
-  align-items: center;
+  align-items:center;
   gap:25px;
   margin-top:40px;
 }
@@ -319,71 +316,17 @@ footer{
   color:#9b78ff;
 }
 
-.hamburger{
-  display:flex;
-  flex-direction:column;
-  gap:6px;
-  cursor:pointer;
-  z-index:1000;
-}
-
-.hamburger span{
-  width:28px;
-  height:2px;
-  background:#fff;
-  transition:.3s ease;
-}
-
-/* =====×変形状態===== */
-.hamburger.active span:nth-child(1){
-  transform: translateY(8px) rotate(45deg);
-}
-
-.hamburger.active span:nth-child(2){
-  opacity:0;
-}
-
-.hamburger.active span:nth-child(3){
-  transform: translateY(-8px) rotate(-45deg);
-}
-.socials {
-  display: flex;
-  gap: 14px;
-  align-items: center;
-}
-
-.socials img {
-  width: 32px;      /* ←ここが重要（公式っぽいサイズ） */
-  height: 32px;
-  object-fit: contain;
-  display: block;
-  opacity: 0.85;
-  transition: 0.3s;
-}
-
-.socials img:hover {
-  opacity: 1;
-  transform: translateY(-2px);
-}
 /* ==================================
-   RESPONSIVE FIX（重要）
+   RESPONSIVE
 ================================== */
-@media(max-width:1024px){
-  footer{
-    padding: 50px 20px;
-  }
-}
-/* タブレット以下 */
+
 @media(max-width:1000px){
 
   header{
     padding:20px;
   }
 
-  nav{
-    display:none;
-  }
-
+  nav,
   .login-btn{
     display:none;
   }
@@ -405,45 +348,40 @@ footer{
   }
 }
 
-/* スマホ（ここが今回のバグ原因修正） */
 @media(max-width:768px){
 
   header{
-    flex-direction:row !important; /* ★縦並び防止 */
+    flex-direction:row !important;
     justify-content:space-between;
     align-items:center;
-    gap:0;
     padding:15px 20px;
-  }
-
-  .logo{
-    font-size:42px;
-  }
-
-  nav{
-    display:none;
-  }
-
-  .login-btn{
-    display:none;
   }
 
   .footer-inner{
     flex-direction:column;
     text-align:center;
   }
+
+  .socials{
+    justify-content:center;
+  }
 }
 
-/* 超小型 */
 @media(max-width:480px){
-footer{
-  padding: 10px 20px;;
-}
+
+  footer{
+    padding:20px 10px;
+  }
+
   .logo{
     font-size:34px;
   }
 
   section{
     margin:60px auto;
+  }
+
+  .socials{
+    gap:10px;
   }
 }
