@@ -1,3 +1,11 @@
+body {
+  background: #05050a;
+  color: #eae6ff;
+  font-family: Helvetica, Arial, sans-serif;
+  letter-spacing: 0.5px;
+}
+
+
 .movie-page{
     width:90%;
     max-width:1400px;
