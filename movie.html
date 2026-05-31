@@ -4,70 +4,284 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Movie | aespa Fan Site</title>
+  <title>aespa Fan Site</title>
 
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/movie.css">
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 </head>
 
 <body>
 
-  <header>
-    <div class="logo">ae<span>spa</span></div>
+  <header><a href="index.html">
+      <div class="logo">ae<span>spa</span></div>
+    </a>
 
-    <nav>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav class="nav" id="nav">
       <a href="index.html">HOME</a>
       <a href="news.html">NEWS</a>
       <a href="profile.html">PROFILE</a>
       <a href="discography.html">DISCOGRAPHY</a>
       <a href="movie.html">MOVIE</a>
-      <a href="#">GALLERY</a>
+      <a href="gallery.html">GALLERY</a>
     </nav>
 
     <button class="login-btn">FANCLUB</button>
+    <div class="slide-menu" id="slideMenu">
+
+      <div class="slide-header">
+        <input type="text" id="searchInput" placeholder="Search...">
+      </div>
+
+      <div class="slide-links">
+        <a href="index.html">HOME</a>
+        <a href="news.html">NEWS</a>
+        <a href="profile.html">PROFILE</a>
+        <a href="discography.html">DISCOGRAPHY</a>
+        <a href="movie.html">MOVIE</a>
+        <a href="gallery.html">GALLERY</a>
+      </div>
+
+    </div>
   </header>
 
   <!-- MOVIE SECTION -->
-  <section class="movie-section">
+  <section class="movie-page">
 
-    <div class="movie-title">
+    <div class="movie-header">
+      <p class="movie-sub">VIDEO</p>
       <h1>MOVIE</h1>
-      <p>Official Music Video & Live Performance</p>
     </div>
 
-    <div class="movie-main">
+    <div class="movie-grid">
 
-      <!-- YouTube埋め込み -->
-      <div class="video-wrapper">
-<iframe style="border-radius:12px" 
-src="https://open.spotify.com/embed/track/ID"
-width="100%" height="152" frameborder="0"
-allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
-</iframe>
-      <!-- プレイリスト風（右側） -->
-      <div class="movie-list">
-        <div class="movie-item active">WHIPLASH MV</div>
-        <div class="movie-item">LIVE STAGE</div>
-        <div class="movie-item">BEHIND THE SCENES</div>
-        <div class="movie-item">WORLD TOUR</div>
-      </div>
+      <a href="#" class="movie-card">
+        <div class="movie-thumb">
+          <img src="img/thumbnail-lemonade.jpg" alt="">
+        </div>
+        <div class="movie-info">
+          <p class="movie-date">2026.05.29</p>
+          <h3>レモネード</h3>
+        </div>
+      </a>
+
+      <a href="#" class="movie-card">
+        <div class="movie-thumb">
+          <img src="img/thumbnail-wda.jpg" alt="">
+        </div>
+        <div class="movie-info">
+          <p class="movie-date">2026.05.11</p>
+          <h3>Wda</h3>
+        </div>
+      </a>
+
+      <a href="#" class="movie-card">
+        <div class="movie-thumb">
+          <img src="img/thumbnail-richman.jpg" alt="">
+        </div>
+        <div class="movie-info">
+          <p class="movie-date">2025.09.05</p>
+          <h3>Richman</h3>
+        </div>
+      </a>
+
+      <a href="#" class="movie-card">
+        <div class="movie-thumb">
+          <img src="img/thumbnail-dirtywork.jpg" alt="">
+        </div>
+        <div class="movie-info">
+          <p class="movie-date">2025.06.27</p>
+          <h3>Dirty work</h3>
+        </div>
+      </a>
+
+      <a href="#" class="movie-card">
+        <div class="movie-thumb">
+          <img src="img/thumbnail-whiplash.jpg" alt="">
+        </div>
+        <div class="movie-info">
+          <p class="movie-date">2024.10.21</p>
+          <h3>Whiplash</h3>
+        </div>
+      </a>
+
+      <a href="#" class="movie-card">
+        <div class="movie-thumb">
+          <img src="img/thumbnail-hot-mess.jpg" alt="">
+        </div>
+        <div class="movie-info">
+          <p class="movie-date">2024.07.03</p>
+          <h3>Hot mess</h3>
+        </div>
+      </a>
+
+      <a href="#" class="movie-card">
+        <div class="movie-thumb">
+          <img src="img/thumbnail-armageddon.jpg" alt="">
+        </div>
+        <div class="movie-info">
+          <p class="movie-date">2024.05.27</p>
+          <h3>Armageddon</h3>
+        </div>
+      </a>
+
+      <a href="#" class="movie-card">
+        <div class="movie-thumb">
+          <img src="img/thumbnail-supernova.png" alt="">
+        </div>
+        <div class="movie-info">
+          <p class="movie-date">2024.05.13</p>
+          <h3>Supernova</h3>
+        </div>
+      </a>
+
+      <a href="#" class="movie-card">
+        <div class="movie-thumb">
+          <img src="img/thumbnail-livetour2023.jpg" alt="">
+        </div>
+        <div class="movie-info">
+          <p class="movie-date">2023.12.27</p>
+          <h3>Livetour2023</h3>
+        </div>
+      </a>
+
+      <a href="#" class="movie-card">
+        <div class="movie-thumb">
+          <img src="img/thumbnail-drama.jpeg" alt="">
+        </div>
+        <div class="movie-info">
+          <p class="movie-date">2023.11.10</p>
+          <h3>Drama</h3>
+        </div>
+      </a>
+
+      <a href="#" class="movie-card">
+        <div class="movie-thumb">
+          <img src="img/thumbnail-better-things.jpeg" alt="">
+        </div>
+        <div class="movie-info">
+          <p class="movie-date">2023.08.18</p>
+          <h3>better things</h3>
+        </div>
+      </a>
+
+      <a href="#" class="movie-card">
+        <div class="movie-thumb">
+          <img src="img/thumbnail-spicy.jpg" alt="">
+        </div>
+        <div class="movie-info">
+          <p class="movie-date">2023.05.08</p>
+          <h3>Spicy</h3>
+        </div>
+      </a>
+
+      <a href="#" class="movie-card">
+        <div class="movie-thumb">
+          <img src="img/thumbnail-welcome-to-my-world.jpg" alt="">
+        </div>
+        <div class="movie-info">
+          <p class="movie-date">2023.05.08</p>
+          <h3>Welcome to my world</h3>
+        </div>
+      </a>
+
+      <a href="#" class="movie-card">
+        <div class="movie-thumb">
+          <img src="img/thumbnail-girls.jpg" alt="">
+        </div>
+        <div class="movie-info">
+          <p class="movie-date">2022.07.08</p>
+          <h3>Girls</h3>
+        </div>
+      </a>
+
+      <a href="#" class="movie-card">
+        <div class="movie-thumb">
+          <img src="img/thumbnail-lifes-too-short.jpg" alt="">
+        </div>
+        <div class="movie-info">
+          <p class="movie-date">2022.06.24</p>
+          <h3>Life’s too short</h3>
+        </div>
+      </a>
+
+      <a href="#" class="movie-card">
+        <div class="movie-thumb">
+          <img src="img/thumbnail-dreams-come-true.jpg" alt="">
+        </div>
+        <div class="movie-info">
+          <p class="movie-date">2021.12.20</p>
+          <h3>Dreams come true</h3>
+        </div>
+      </a>
+
+      <a href="#" class="movie-card">
+        <div class="movie-thumb">
+          <img src="img/thumbnail-savage.jpg" alt="">
+        </div>
+        <div class="movie-info">
+          <p class="movie-date">2021.10.05</p>
+          <h3>Savage</h3>
+        </div>
+      </a>
+
+      <a href="#" class="movie-card">
+        <div class="movie-thumb">
+          <img src="img/thumbnail-next-level.jpg" alt="">
+        </div>
+        <div class="movie-info">
+          <p class="movie-date">2021.05.17</p>
+          <h3>Next level</h3>
+        </div>
+      </a>
+
+      <a href="#" class="movie-card">
+        <div class="movie-thumb">
+          <img src="img/thumbnail-forever.jpg" alt="">
+        </div>
+        <div class="movie-info">
+          <p class="movie-date">2021.02.05</p>
+          <h3>Forever</h3>
+        </div>
+      </a>
+
+      <a href="#" class="movie-card">
+        <div class="movie-thumb">
+          <img src="img/thumbnail-black-mamba.jpg" alt="">
+        </div>
+        <div class="movie-info">
+          <p class="movie-date">2020.11.17</p>
+          <h3>Blackmamba</h3>
+        </div>
+      </a>
 
     </div>
 
   </section>
-<footer>
-  <div class="footer-inner">
 
-    <div class="socials">
-      <span>Instagram</span>
-      <span>YouTube</span>
-      <span>TikTok</span>
+  <footer>
+    <div class="footer-inner">
+
+      <div class="socials">
+        <span>Instagram</span>
+        <span>YouTube</span>
+        <span>TikTok</span>
+      </div>
+
+      <div class="copyright">© 2026 AESPA FAN SITE</div>
+
     </div>
+  </footer>
 
-    <div class="copyright">© 2026 AESPA FAN SITE</div>
-
-  </div>
-</footer>
 </body>
+
 </html>
