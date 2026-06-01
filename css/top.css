@@ -11,7 +11,9 @@ html, body {
   margin: 0;
   padding: 0;
 }
-
+.logo{
+  width: 50%;
+}
 
 /* ==================================
    HERO
@@ -155,10 +157,49 @@ html, body {
 /* ==================================
    ABOUT
 ================================== */
+
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 80px;
+  align-items: center;
+}
+
+/* 2×2 メンバー窓 */
+
+.about-image {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.about-image img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+
+  border-radius: 16px;
+
+  border: 1px solid rgba(155,120,255,.2);
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.35);
+
+  transition: .4s ease;
+}
+
+.about-image img:hover {
+  transform: scale(1.05);
+}
+
+.about-grid .section-title {
+  font-size: 72px;
+  line-height: .95;
+}
+
+.about-grid .section-text {
+  margin-top: 30px;
+  max-width: 500px;
 }
 
 /* ==================================
@@ -177,9 +218,16 @@ html, body {
   background: #9b78ff;
   color: #000;
 }
+
 /* ==================================
    RESPONSIVE
 ================================== */
+@media (min-width: 1024px) {
+    .hamburger{
+    display: none;
+  }
+  
+}
 
 /* ===== 1024px ===== */
 @media (max-width: 1024px) {
@@ -199,7 +247,6 @@ html, body {
   .hamburger {
     display: flex;
     flex-direction: column;
-    /* gap: 5px; */
     cursor: pointer;
   }
 
@@ -269,7 +316,7 @@ html, body {
 @media (max-width: 480px) {
 
   .heroSwiper {
-    height: 50vh; /* ←これに変更 */
+    height: 50vh;
   }
 
   .hero h1 {
