@@ -2,6 +2,7 @@
 * {
   box-sizing: border-box;
 }
+
 /* ==================================
    GLOBAL SETUP
 ================================== */
@@ -11,7 +12,8 @@ html, body {
   margin: 0;
   padding: 0;
 }
-.logo{
+
+.logo {
   width: 50%;
 }
 
@@ -47,11 +49,7 @@ html, body {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(5, 5, 5, 0.2),
-    rgba(5, 5, 5, 0.8)
-  );
+  background: linear-gradient(to bottom, rgba(5,5,5,0.2), rgba(5,5,5,0.8));
   z-index: 2;
   pointer-events: none;
 }
@@ -92,6 +90,56 @@ html, body {
   font-size: 16px;
   line-height: 1.8;
   color: #e0e0e0;
+}
+/* 全体 */
+.profile-block {
+  width: 92%;
+  max-width: 1200px;
+  margin: 120px auto;
+}
+
+/* 大きいメイン画像 */
+.profile-main img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 40px;
+}
+
+/* 4人の小さい画像 */
+.profile-members {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.profile-members .member img {
+  width: 100%;
+  aspect-ratio: 1 / 1.2;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.15);
+  transition: .3s ease;
+}
+
+.profile-members .member img:hover {
+  transform: scale(1.05);
+}
+
+/* ===== 768px以下 ===== */
+@media (max-width: 768px) {
+  .profile-members {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+/* ===== 480px以下 ===== */
+@media (max-width: 480px) {
+  .profile-members {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Swiper UI */
@@ -155,9 +203,8 @@ html, body {
 }
 
 /* ==================================
-   ABOUT
+   ABOUT（修正版）
 ================================== */
-
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -165,35 +212,38 @@ html, body {
   align-items: center;
 }
 
-/* 2×2 メンバー窓 */
-
-.about-image {
+/* 2×2 メンバー画像グリッド */
+.about-images {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
+  justify-items: center;
+  align-items: center;
 }
 
-.about-image img {
+.about-images .img-box {
   width: 100%;
   aspect-ratio: 1 / 1;
-  object-fit: cover;
-
+  overflow: hidden;
   border-radius: 16px;
-
   border: 1px solid rgba(155,120,255,.2);
-
-  box-shadow:
-    0 10px 30px rgba(0,0,0,.35);
-
-  transition: .4s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+  transition: transform .4s ease;
 }
 
-.about-image img:hover {
+.about-images .img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.about-images .img-box:hover {
   transform: scale(1.05);
 }
 
 .about-grid .section-title {
-  font-size: 72px;
+  font-size: 52px;
   line-height: .95;
 }
 
@@ -223,10 +273,9 @@ html, body {
    RESPONSIVE
 ================================== */
 @media (min-width: 1024px) {
-    .hamburger{
+  .hamburger {
     display: none;
   }
-  
 }
 
 /* ===== 1024px ===== */
@@ -242,8 +291,6 @@ html, body {
 
 /* ===== 768px ===== */
 @media (max-width: 768px) {
-
-  /* ハンバーガー表示 */
   .hamburger {
     display: flex;
     flex-direction: column;
@@ -300,6 +347,11 @@ html, body {
     grid-template-columns: 1fr;
   }
 
+  .about-images {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
   .hero-btn-1 {
     width: 100%;
     text-align: center;
@@ -314,7 +366,6 @@ html, body {
 
 /* ===== 480px ===== */
 @media (max-width: 480px) {
-
   .heroSwiper {
     height: 50vh;
   }
@@ -329,5 +380,10 @@ html, body {
 
   .project-title {
     font-size: 22px;
+  }
+
+  /* ABOUT：1列に変更 */
+  .about-images {
+    grid-template-columns: 1fr;
   }
 }
