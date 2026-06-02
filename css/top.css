@@ -138,7 +138,7 @@ html, body {
 /* ===== 480px以下 ===== */
 @media (max-width: 480px) {
   .profile-members {
-    grid-template-columns: 1fr;
+    /* grid-template-columns: 1fr; */
   }
 }
 
